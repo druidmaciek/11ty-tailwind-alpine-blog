@@ -1,0 +1,19 @@
+---
+title: About Page
+description: This is the about page
+layout: layouts/main
+---
+
+{% include components/hero, hero_title: "Projects", hero_subtitle: "See my projects", hero_img:
+"https://images.unsplash.com/photo-1628688841268-53d0fff13617?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80"
+%}
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 ">
+    {% for article in collections.work reversed %}
+
+    <a href="{{ article.url }}" class="p-4 border rounded shadow hover:bg-gray-100">
+        <h3 class="text-lg font-bold">{{ article.data.title }}</h3>
+        <p class="text-gray-700">{{ article.data.description }}</p>
+    </a>
+
+    {% endfor %}
+</div>
